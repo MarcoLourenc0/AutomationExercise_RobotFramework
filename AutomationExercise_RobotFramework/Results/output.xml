@@ -1,0 +1,2112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.7 on win32)" generated="20240917 09:35:26.354" rpa="false" schemaversion="4">
+<suite id="s1" name="Test Suites" source="c:\Users\Marco\.vscode\AutomationExercise_RobotFramework\Test_Suites">
+<suite id="s1-s1" name="TestCases Cart" source="c:\Users\Marco\.vscode\AutomationExercise_RobotFramework\Test_Suites\TestCases_Cart.robot">
+<test id="s1-s1-t1" name="TC01 - Remove Products From Cart" line="10">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:35:26.794" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:35:26.794" endtime="20240917 09:35:31.742"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:35:31.742" endtime="20240917 09:35:31.783"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:26.794" endtime="20240917 09:35:31.783"/>
+</kw>
+<kw name="Given I have already added products to the cart" library="automationexercise_Cart">
+<kw name="That is on the &quot;Products&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:31.787" endtime="20240917 09:35:31.787"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:31.788" endtime="20240917 09:35:31.788"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:31.789" endtime="20240917 09:35:31.789"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:31.789" endtime="20240917 09:35:31.789"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:35:31.787" endtime="20240917 09:35:31.789"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:31.790" level="INFO">Clicking element '//a[contains(.,'Products')]'.</msg>
+<status status="PASS" starttime="20240917 09:35:31.789" endtime="20240917 09:35:35.363"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:35:35.364" endtime="20240917 09:35:35.420"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:35:35.576" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:35:35.420" endtime="20240917 09:35:35.576"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:31.789" endtime="20240917 09:35:35.576"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:35:35.576" endtime="20240917 09:35:35.576"/>
+</branch>
+<status status="PASS" starttime="20240917 09:35:31.786" endtime="20240917 09:35:35.576"/>
+</if>
+<status status="PASS" starttime="20240917 09:35:31.785" endtime="20240917 09:35:35.576"/>
+</kw>
+<kw name="Add two products to cart" library="automationexercise_Products">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240917 09:35:35.583" level="INFO">Executing JavaScript:
+window.scrollTo(0,400)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240917 09:35:35.583" endtime="20240917 09:35:35.621"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:35:38.635" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:35:35.621" endtime="20240917 09:35:38.636"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:35:38.795" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:35:38.636" endtime="20240917 09:35:38.795"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Product_One}</var>
+<arg>${Products.Product_OneName}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:38.825" level="INFO">${Product_One} = Blue Top</msg>
+<status status="PASS" starttime="20240917 09:35:38.795" endtime="20240917 09:35:38.825"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Product_One}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240917 09:35:38.825" level="INFO">${Product_One} = Blue Top</msg>
+<status status="PASS" starttime="20240917 09:35:38.825" endtime="20240917 09:35:38.825"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Product_Two}</var>
+<arg>${Products.Product_TwoName}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:38.845" level="INFO">${Product_Two} = Men Tshirt</msg>
+<status status="PASS" starttime="20240917 09:35:38.825" endtime="20240917 09:35:38.845"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Product_Two}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240917 09:35:38.845" level="INFO">${Product_Two} = Men Tshirt</msg>
+<status status="PASS" starttime="20240917 09:35:38.845" endtime="20240917 09:35:38.845"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Product_One}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:38.845" level="INFO">Clicking element '//a[@data-product-id='1'][contains(.,'Add to cart')][1]'.</msg>
+<status status="PASS" starttime="20240917 09:35:38.845" endtime="20240917 09:35:38.879"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:35:41.887" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:35:38.879" endtime="20240917 09:35:41.887"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Continue Shopping</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:35:41.888" endtime="20240917 09:35:41.895"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Products.Button_ContinueShopping}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:41.900" level="INFO">Clicking button '//button[@class='btn btn-success close-modal btn-block'][contains(.,'Continue Shopping')]'.</msg>
+<status status="PASS" starttime="20240917 09:35:41.900" endtime="20240917 09:35:41.947"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Product_Two}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:41.947" level="INFO">Clicking element '//a[@data-product-id='2'][contains(.,'Add to cart')][1]'.</msg>
+<status status="PASS" starttime="20240917 09:35:41.947" endtime="20240917 09:35:41.990"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:35:45.002" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:35:41.990" endtime="20240917 09:35:45.002"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Continue Shopping</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:35:45.002" endtime="20240917 09:35:45.005"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Products.Button_ContinueShopping}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:45.015" level="INFO">Clicking button '//button[@class='btn btn-success close-modal btn-block'][contains(.,'Continue Shopping')]'.</msg>
+<status status="PASS" starttime="20240917 09:35:45.005" endtime="20240917 09:35:45.048"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:35.576" endtime="20240917 09:35:45.048"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:35:45.195" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:35:45.048" endtime="20240917 09:35:45.195"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:31.783" endtime="20240917 09:35:45.195"/>
+</kw>
+<kw name="And That is on the &quot;Cart&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:35:45.203" endtime="20240917 09:35:45.205"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:35:45.205" endtime="20240917 09:35:45.205"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:45.205" level="INFO">Clicking element '//a[contains(.,'Cart')]'.</msg>
+<status status="PASS" starttime="20240917 09:35:45.205" endtime="20240917 09:35:47.062"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:35:47.063" endtime="20240917 09:35:47.091"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:35:47.247" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:35:47.091" endtime="20240917 09:35:47.247"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:45.205" endtime="20240917 09:35:47.247"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:47.253" endtime="20240917 09:35:47.253"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:47.253" endtime="20240917 09:35:47.253"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:35:47.255" endtime="20240917 09:35:47.255"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:35:47.252" endtime="20240917 09:35:47.255"/>
+</branch>
+<status status="PASS" starttime="20240917 09:35:45.203" endtime="20240917 09:35:47.256"/>
+</if>
+<status status="PASS" starttime="20240917 09:35:45.203" endtime="20240917 09:35:47.256"/>
+</kw>
+<kw name="When Click 'X' button corresponding to particular product" library="automationexercise_Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Cart.Product_Delete}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:47.257" level="INFO">Clicking element '//a[contains(@data-product-id,'1')]'.</msg>
+<status status="PASS" starttime="20240917 09:35:47.257" endtime="20240917 09:35:47.293"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:35:50.295" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:35:47.293" endtime="20240917 09:35:50.295"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:47.256" endtime="20240917 09:35:50.295"/>
+</kw>
+<kw name="Then Verify that product is removed from the cart" library="automationexercise_Cart">
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>Blue Top</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20240917 09:35:50.515" level="INFO">Current page does not contain text 'Blue Top'.</msg>
+<status status="PASS" starttime="20240917 09:35:50.295" endtime="20240917 09:35:50.515"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:35:50.625" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:35:50.515" endtime="20240917 09:35:50.625"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:50.295" endtime="20240917 09:35:50.625"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:35:50.725" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:35:50.625" endtime="20240917 09:35:50.725"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:35:50.725" endtime="20240917 09:35:53.068"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:50.625" endtime="20240917 09:35:53.068"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:26.794" endtime="20240917 09:35:53.075"/>
+</test>
+<test id="s1-s1-t2" name="TC02 - Add to cart from Recommended items" line="16">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:35:53.080" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:35:53.075" endtime="20240917 09:35:59.175"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:35:59.175" endtime="20240917 09:35:59.215"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:53.075" endtime="20240917 09:35:59.216"/>
+</kw>
+<kw name="Given That is on the &quot;Home&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:35:59.222" level="INFO">Clicking element '//a[contains(.,'Home')]'.</msg>
+<status status="PASS" starttime="20240917 09:35:59.218" endtime="20240917 09:36:01.809"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240917 09:36:01.809" level="INFO">Executing JavaScript:
+window.scrollTo(0,300)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240917 09:36:01.809" endtime="20240917 09:36:01.816"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240917 09:36:01.833" level="INFO">Current page contains text 'Features Items'.</msg>
+<status status="PASS" starttime="20240917 09:36:01.817" endtime="20240917 09:36:01.833"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:02.069" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:01.833" endtime="20240917 09:36:02.070"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:59.218" endtime="20240917 09:36:02.070"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.072" endtime="20240917 09:36:02.072"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.073" endtime="20240917 09:36:02.073"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.073" endtime="20240917 09:36:02.073"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:02.070" endtime="20240917 09:36:02.073"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.074" endtime="20240917 09:36:02.074"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.074" endtime="20240917 09:36:02.074"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.075" endtime="20240917 09:36:02.075"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:02.073" endtime="20240917 09:36:02.075"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.075" endtime="20240917 09:36:02.076"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.076" endtime="20240917 09:36:02.076"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:02.076" endtime="20240917 09:36:02.077"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:02.075" endtime="20240917 09:36:02.077"/>
+</branch>
+<status status="PASS" starttime="20240917 09:35:59.218" endtime="20240917 09:36:02.077"/>
+</if>
+<status status="PASS" starttime="20240917 09:35:59.216" endtime="20240917 09:36:02.077"/>
+</kw>
+<kw name="When Click on 'Add To Cart' on Recommended product" library="automationexercise_Cart">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,7500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240917 09:36:02.079" level="INFO">Executing JavaScript:
+window.scrollTo(0,7500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240917 09:36:02.079" endtime="20240917 09:36:02.131"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${Cart.RecommendedItems_Title}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240917 09:36:02.131" endtime="20240917 09:36:02.157"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>6</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:36:08.164" level="INFO">Slept 6 seconds</msg>
+<status status="PASS" starttime="20240917 09:36:02.158" endtime="20240917 09:36:08.164"/>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<arg>${Cart.Recommended_ProductImage}</arg>
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<msg timestamp="20240917 09:36:08.180" level="INFO">Current page contains image '//img[@src='get_product_picture/1']'.</msg>
+<status status="PASS" starttime="20240917 09:36:08.164" endtime="20240917 09:36:08.180"/>
+</kw>
+<kw name="Mouse Down On Image" library="SeleniumLibrary">
+<arg>${Cart.Recommended_ProductImage}</arg>
+<doc>Simulates a mouse down event on an image identified by ``locator``.</doc>
+<status status="PASS" starttime="20240917 09:36:08.180" endtime="20240917 09:36:08.555"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:08.704" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:08.555" endtime="20240917 09:36:08.704"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Cart.RecommendedItems_AddToCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:08.704" level="INFO">Clicking element '(//a[@data-product-id='1'][contains(.,'Add to cart')])[3]'.</msg>
+<status status="PASS" starttime="20240917 09:36:08.704" endtime="20240917 09:36:08.760"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:36:11.769" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:36:08.760" endtime="20240917 09:36:11.769"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Continue Shopping</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:36:11.769" endtime="20240917 09:36:11.769"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:11.904" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:11.769" endtime="20240917 09:36:11.905"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:02.078" endtime="20240917 09:36:11.905"/>
+</kw>
+<kw name="Then Verify that product is displayed in cart page" library="automationexercise_Cart">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Button_ViewCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:11.906" level="INFO">Clicking element '//u[contains(.,'View Cart')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:11.906" endtime="20240917 09:36:14.498"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Blue Top</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:36:14.498" endtime="20240917 09:36:14.506"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:14.624" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:14.506" endtime="20240917 09:36:14.624"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:11.905" endtime="20240917 09:36:14.624"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:14.789" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:14.624" endtime="20240917 09:36:14.795"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:36:14.795" endtime="20240917 09:36:17.023"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:14.624" endtime="20240917 09:36:17.024"/>
+</kw>
+<status status="PASS" starttime="20240917 09:35:53.075" endtime="20240917 09:36:17.025"/>
+</test>
+<status status="PASS" starttime="20240917 09:35:26.387" endtime="20240917 09:36:17.027"/>
+</suite>
+<suite id="s1-s2" name="TestCases Home" source="c:\Users\Marco\.vscode\AutomationExercise_RobotFramework\Test_Suites\TestCases_Home.robot">
+<test id="s1-s2-t1" name="TC01 - Verify Subscription in home page" line="9">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:36:17.044" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:36:17.043" endtime="20240917 09:36:21.204"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:36:21.204" endtime="20240917 09:36:21.241"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:17.042" endtime="20240917 09:36:21.242"/>
+</kw>
+<kw name="Given That is on the &quot;Home&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:21.245" level="INFO">Clicking element '//a[contains(.,'Home')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:21.244" endtime="20240917 09:36:22.830"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240917 09:36:22.831" level="INFO">Executing JavaScript:
+window.scrollTo(0,300)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240917 09:36:22.831" endtime="20240917 09:36:22.837"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240917 09:36:22.850" level="INFO">Current page contains text 'Features Items'.</msg>
+<status status="PASS" starttime="20240917 09:36:22.837" endtime="20240917 09:36:22.850"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:23.074" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:22.850" endtime="20240917 09:36:23.074"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:21.243" endtime="20240917 09:36:23.074"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.074" endtime="20240917 09:36:23.074"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.074" endtime="20240917 09:36:23.075"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.075" endtime="20240917 09:36:23.075"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:23.074" endtime="20240917 09:36:23.075"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.077" endtime="20240917 09:36:23.077"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.077" endtime="20240917 09:36:23.077"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.077" endtime="20240917 09:36:23.077"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:23.075" endtime="20240917 09:36:23.077"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.078" endtime="20240917 09:36:23.078"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.078" endtime="20240917 09:36:23.078"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:23.078" endtime="20240917 09:36:23.079"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:23.078" endtime="20240917 09:36:23.079"/>
+</branch>
+<status status="PASS" starttime="20240917 09:36:21.243" endtime="20240917 09:36:23.079"/>
+</if>
+<status status="PASS" starttime="20240917 09:36:21.242" endtime="20240917 09:36:23.079"/>
+</kw>
+<kw name="When Typing the email address in the entry and clicking the arrow button" library="automationexercise_Home">
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${Home.Subscription}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240917 09:36:23.080" endtime="20240917 09:36:23.215"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Home.Subscription}</arg>
+<arg>Tester@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:23.216" level="INFO">Typing text 'Tester@gmail.com' into text field '//input[@type='email'][contains(@id,'susbscribe_email')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:23.215" endtime="20240917 09:36:23.300"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Home.Button_Subscription}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:23.301" level="INFO">Clicking button '//button[contains(@id,'subscribe')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:23.300" endtime="20240917 09:36:23.352"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:23.526" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:23.352" endtime="20240917 09:36:23.526"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:23.079" endtime="20240917 09:36:23.531"/>
+</kw>
+<kw name="Then It returns the success message &quot;You have been successfully registered!&quot;" library="automationexercise_Home">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>You have been successfully subscribed!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:36:23.533" endtime="20240917 09:36:23.542"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:23.835" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:23.542" endtime="20240917 09:36:23.835"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:23.531" endtime="20240917 09:36:23.836"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:23.981" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:23.840" endtime="20240917 09:36:23.985"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:36:23.985" endtime="20240917 09:36:26.304"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:23.839" endtime="20240917 09:36:26.304"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:17.041" endtime="20240917 09:36:26.304"/>
+</test>
+<status status="PASS" starttime="20240917 09:36:17.030" endtime="20240917 09:36:26.304"/>
+</suite>
+<suite id="s1-s3" name="TestCases Login" source="c:\Users\Marco\.vscode\AutomationExercise_RobotFramework\Test_Suites\TestCases_Login.robot">
+<test id="s1-s3-t1" name="TC01 - Register User" line="9">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:36:26.323" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:36:26.317" endtime="20240917 09:36:30.419"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:36:30.420" endtime="20240917 09:36:30.450"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:26.317" endtime="20240917 09:36:30.450"/>
+</kw>
+<kw name="Given That is on the &quot;Signup&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.454" endtime="20240917 09:36:30.455"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.455" endtime="20240917 09:36:30.455"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.456" endtime="20240917 09:36:30.456"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.456" endtime="20240917 09:36:30.456"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:30.451" endtime="20240917 09:36:30.456"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.457" endtime="20240917 09:36:30.457"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.457" endtime="20240917 09:36:30.458"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.458" endtime="20240917 09:36:30.458"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:30.457" endtime="20240917 09:36:30.458"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.458" endtime="20240917 09:36:30.458"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.459" endtime="20240917 09:36:30.459"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:30.459" endtime="20240917 09:36:30.459"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:30.458" endtime="20240917 09:36:30.459"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:30.460" level="INFO">Clicking link '//a[contains(.,'Signup / Login')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:30.459" endtime="20240917 09:36:31.957"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:36:31.958" endtime="20240917 09:36:31.978"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:32.102" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:31.978" endtime="20240917 09:36:32.102"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:30.459" endtime="20240917 09:36:32.103"/>
+</branch>
+<status status="PASS" starttime="20240917 09:36:30.451" endtime="20240917 09:36:32.103"/>
+</if>
+<status status="PASS" starttime="20240917 09:36:30.451" endtime="20240917 09:36:32.103"/>
+</kw>
+<kw name="And Click &quot;Signup&quot; button" library="automationexercise_Login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.NewUser_Name}</arg>
+<arg>QA Marco</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:32.106" level="INFO">Typing text 'QA Marco' into text field '//input[contains(@data-qa,'signup-name')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:32.104" endtime="20240917 09:36:32.194"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.NewUser_Email}</arg>
+<arg>Tester_Marco@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:32.194" level="INFO">Typing text 'Tester_Marco@gmail.com' into text field '//input[contains(@data-qa,'signup-email')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:32.194" endtime="20240917 09:36:32.283"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:32.403" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:32.283" endtime="20240917 09:36:32.409"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Login.Button_Signup}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:32.409" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Signup')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:32.409" endtime="20240917 09:36:35.800"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:32.104" endtime="20240917 09:36:35.801"/>
+</kw>
+<kw name="When Filling out all the fields" library="automationexercise_Login">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Register.Register_Title}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:36:35.802" endtime="20240917 09:36:35.823"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Register.Option_Title}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:35.823" level="INFO">Clicking element '//input[@value='Mr']'.</msg>
+<status status="PASS" starttime="20240917 09:36:35.823" endtime="20240917 09:36:35.883"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${Register.Fild_Password}</arg>
+<arg>QA00799</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:35.883" level="INFO">Typing password into text field '//input[@data-qa='password']'.</msg>
+<msg timestamp="20240917 09:36:35.908" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240917 09:36:35.975" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240917 09:36:35.883" endtime="20240917 09:36:35.975"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Register.Option_Day}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:35.975" level="INFO">Clicking element '//option[@value='1'][contains(.,'1')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:35.975" endtime="20240917 09:36:36.020"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Register.Option_Month}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.022" level="INFO">Clicking element '//option[@value='12'][contains(.,'December')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.021" endtime="20240917 09:36:36.046"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Register.Option_Year}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.046" level="INFO">Clicking element '//option[@value='2000'][contains(.,'2000')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.046" endtime="20240917 09:36:36.058"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:36.256" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:36.058" endtime="20240917 09:36:36.256"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_FirstName}</arg>
+<arg>Marco</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.256" level="INFO">Typing text 'Marco' into text field '//input[@data-qa='first_name']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.256" endtime="20240917 09:36:36.325"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_LastName}</arg>
+<arg>Lourenco</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.326" level="INFO">Typing text 'Lourenco' into text field '//input[@data-qa='last_name']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.325" endtime="20240917 09:36:36.399"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_Company}</arg>
+<arg>TECHPRIME</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.400" level="INFO">Typing text 'TECHPRIME' into text field '//input[@data-qa='company']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.399" endtime="20240917 09:36:36.475"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_Address}</arg>
+<arg>Washington Avenue</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.476" level="INFO">Typing text 'Washington Avenue' into text field '//input[@data-qa='address']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.475" endtime="20240917 09:36:36.558"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Register.Option_Country}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.558" level="INFO">Clicking element '//option[@value='United States'][contains(.,'United States')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.558" endtime="20240917 09:36:36.579"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_State}</arg>
+<arg>Nevada</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.579" level="INFO">Typing text 'Nevada' into text field '//input[@data-qa='state']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.579" endtime="20240917 09:36:36.646"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_City}</arg>
+<arg>Las Vegas</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.646" level="INFO">Typing text 'Las Vegas' into text field '//input[@data-qa='city']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.646" endtime="20240917 09:36:36.727"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:36.852" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:36.727" endtime="20240917 09:36:36.852"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_Zipcode}</arg>
+<arg>89108</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.852" level="INFO">Typing text '89108' into text field '//input[@data-qa='zipcode']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.852" endtime="20240917 09:36:36.948"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Register.Fild_MobileNumber}</arg>
+<arg>5541988541277</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:36.948" level="INFO">Typing text '5541988541277' into text field '//input[@data-qa='mobile_number']'.</msg>
+<status status="PASS" starttime="20240917 09:36:36.948" endtime="20240917 09:36:37.025"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${Register.Button_CreateAccount}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240917 09:36:37.025" endtime="20240917 09:36:37.044"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Register.Button_CreateAccount}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:37.044" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Create Account')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:37.044" endtime="20240917 09:36:39.212"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:35.801" endtime="20240917 09:36:39.212"/>
+</kw>
+<kw name="Then Make sure &quot;ACCOUNT CREATED!&quot; is visible" library="automationexercise_Login">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Account Created!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:36:39.213" endtime="20240917 09:36:39.228"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:39.382" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:39.228" endtime="20240917 09:36:39.390"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:39.213" endtime="20240917 09:36:39.390"/>
+</kw>
+<kw name="And Verify that &quot;Logged in as new user&quot; is visible" library="automationexercise_Login" sourcename="Verify that &quot;${Logged_In}&quot; is visible">
+<if>
+<branch type="IF" condition="&quot;${Logged_In}&quot; ==&quot;Logged in as new user&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Register.Button_Continue}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:39.394" level="INFO">Clicking link '//a[contains(@data-qa,'continue-button')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:39.393" endtime="20240917 09:36:41.343"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Logged in as QA Marco</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:36:41.343" endtime="20240917 09:36:41.359"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:41.596" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:41.359" endtime="20240917 09:36:41.596"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login.Delete_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:41.597" level="INFO">Clicking element '//a[contains(.,'Delete Account')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:41.597" endtime="20240917 09:36:42.441"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Account Deleted!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:36:42.441" endtime="20240917 09:36:42.467"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:42.703" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:42.468" endtime="20240917 09:36:42.703"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Register.Button_Continue}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:42.703" level="INFO">Clicking link '//a[contains(@data-qa,'continue-button')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:42.703" endtime="20240917 09:36:44.355"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:39.392" endtime="20240917 09:36:44.355"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Logged_In}&quot; ==&quot;Logged in as already registered user&quot;">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Logged in as QA Marco 01</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:44.355" endtime="20240917 09:36:44.355"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:44.356" endtime="20240917 09:36:44.356"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:44.355" endtime="20240917 09:36:44.356"/>
+</branch>
+<status status="PASS" starttime="20240917 09:36:39.392" endtime="20240917 09:36:44.356"/>
+</if>
+<status status="PASS" starttime="20240917 09:36:39.390" endtime="20240917 09:36:44.356"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:44.591" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:44.358" endtime="20240917 09:36:44.591"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:36:44.592" endtime="20240917 09:36:46.853"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:44.356" endtime="20240917 09:36:46.853"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:26.317" endtime="20240917 09:36:46.853"/>
+</test>
+<test id="s1-s3-t2" name="TC02 - Login User with correct email and password" line="16">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:36:46.859" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:36:46.858" endtime="20240917 09:36:50.978"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:36:50.978" endtime="20240917 09:36:51.013"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:46.857" endtime="20240917 09:36:51.014"/>
+</kw>
+<kw name="Given That is on the &quot;Signup&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.018" endtime="20240917 09:36:51.018"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.018" endtime="20240917 09:36:51.019"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.019" endtime="20240917 09:36:51.019"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.019" endtime="20240917 09:36:51.019"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:51.016" endtime="20240917 09:36:51.019"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.020" endtime="20240917 09:36:51.020"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.021" endtime="20240917 09:36:51.021"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.021" endtime="20240917 09:36:51.021"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:51.020" endtime="20240917 09:36:51.021"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.022" endtime="20240917 09:36:51.022"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.022" endtime="20240917 09:36:51.023"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:51.024" endtime="20240917 09:36:51.024"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:51.021" endtime="20240917 09:36:51.024"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:51.026" level="INFO">Clicking link '//a[contains(.,'Signup / Login')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:51.025" endtime="20240917 09:36:51.996"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:36:51.996" endtime="20240917 09:36:52.030"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:52.150" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:52.030" endtime="20240917 09:36:52.150"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:51.024" endtime="20240917 09:36:52.150"/>
+</branch>
+<status status="PASS" starttime="20240917 09:36:51.016" endtime="20240917 09:36:52.155"/>
+</if>
+<status status="PASS" starttime="20240917 09:36:51.015" endtime="20240917 09:36:52.155"/>
+</kw>
+<kw name="When Enter the &quot;correct email address and password&quot;" library="automationexercise_Login" sourcename="Enter the &quot;${Email_Account}&quot;">
+<if>
+<branch type="IF" condition="&quot;${Email_Account}&quot; ==&quot;correct email address and password&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Email}</arg>
+<arg>Tester_Marco01@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:52.158" level="INFO">Typing text 'Tester_Marco01@gmail.com' into text field '//input[contains(@data-qa,'login-email')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:52.157" endtime="20240917 09:36:52.360"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Password}</arg>
+<arg>QA00788</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:52.363" level="INFO">Typing text 'QA00788' into text field '//input[contains(@data-qa,'login-password')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:52.361" endtime="20240917 09:36:52.445"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:52.597" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:52.445" endtime="20240917 09:36:52.599"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:52.156" endtime="20240917 09:36:52.599"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Email_Account}&quot; ==&quot;incorrect email address and password&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Email}</arg>
+<arg>Tester_M4rco9@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:52.600" endtime="20240917 09:36:52.600"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Password}</arg>
+<arg>QA00M852</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:52.600" endtime="20240917 09:36:52.600"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:52.600" endtime="20240917 09:36:52.600"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:52.599" endtime="20240917 09:36:52.601"/>
+</branch>
+<status status="PASS" starttime="20240917 09:36:52.156" endtime="20240917 09:36:52.601"/>
+</if>
+<status status="PASS" starttime="20240917 09:36:52.156" endtime="20240917 09:36:52.601"/>
+</kw>
+<kw name="And Click on the &quot;login&quot; button" library="automationexercise_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login.Button_Login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:36:52.604" level="INFO">Clicking element '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<status status="PASS" starttime="20240917 09:36:52.602" endtime="20240917 09:36:54.724"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:52.601" endtime="20240917 09:36:54.725"/>
+</kw>
+<kw name="Then Verify that &quot;Logged in as already registered user&quot; is visible" library="automationexercise_Login" sourcename="Verify that &quot;${Logged_In}&quot; is visible">
+<if>
+<branch type="IF" condition="&quot;${Logged_In}&quot; ==&quot;Logged in as new user&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Register.Button_Continue}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Logged in as QA Marco</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login.Delete_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Account Deleted!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Register.Button_Continue}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.727"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Logged_In}&quot; ==&quot;Logged in as already registered user&quot;">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Logged in as QA Marco 01</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.744"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:54.963" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:54.744" endtime="20240917 09:36:54.963"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.963"/>
+</branch>
+<status status="PASS" starttime="20240917 09:36:54.727" endtime="20240917 09:36:54.963"/>
+</if>
+<status status="PASS" starttime="20240917 09:36:54.726" endtime="20240917 09:36:54.963"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:36:55.161" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:36:54.964" endtime="20240917 09:36:55.162"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:36:55.162" endtime="20240917 09:36:57.357"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:54.964" endtime="20240917 09:36:57.357"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:46.856" endtime="20240917 09:36:57.358"/>
+</test>
+<test id="s1-s3-t3" name="TC03 - Login User with incorrect email and password" line="22">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:36:57.362" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:36:57.361" endtime="20240917 09:37:01.615"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:37:01.615" endtime="20240917 09:37:01.648"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:57.361" endtime="20240917 09:37:01.648"/>
+</kw>
+<kw name="Given That is on the &quot;Signup&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.651" endtime="20240917 09:37:01.651"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.651" endtime="20240917 09:37:01.652"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.652" endtime="20240917 09:37:01.652"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.652" endtime="20240917 09:37:01.652"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:01.651" endtime="20240917 09:37:01.652"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.653" endtime="20240917 09:37:01.653"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.653" endtime="20240917 09:37:01.653"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.653" endtime="20240917 09:37:01.653"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:01.652" endtime="20240917 09:37:01.654"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.654" endtime="20240917 09:37:01.654"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.654" endtime="20240917 09:37:01.654"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:01.654" endtime="20240917 09:37:01.654"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:01.654" endtime="20240917 09:37:01.654"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:01.654" level="INFO">Clicking link '//a[contains(.,'Signup / Login')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:01.654" endtime="20240917 09:37:06.027"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:37:06.027" endtime="20240917 09:37:06.049"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:06.146" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:06.049" endtime="20240917 09:37:06.146"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:01.654" endtime="20240917 09:37:06.147"/>
+</branch>
+<status status="PASS" starttime="20240917 09:37:01.651" endtime="20240917 09:37:06.147"/>
+</if>
+<status status="PASS" starttime="20240917 09:37:01.650" endtime="20240917 09:37:06.147"/>
+</kw>
+<kw name="When Enter the &quot;incorrect email address and password&quot;" library="automationexercise_Login" sourcename="Enter the &quot;${Email_Account}&quot;">
+<if>
+<branch type="IF" condition="&quot;${Email_Account}&quot; ==&quot;correct email address and password&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Email}</arg>
+<arg>Tester_Marco01@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:06.148" endtime="20240917 09:37:06.148"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Password}</arg>
+<arg>QA00788</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:06.149" endtime="20240917 09:37:06.149"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:06.149" endtime="20240917 09:37:06.149"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:06.148" endtime="20240917 09:37:06.149"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Email_Account}&quot; ==&quot;incorrect email address and password&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Email}</arg>
+<arg>Tester_M4rco9@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:06.150" level="INFO">Typing text 'Tester_M4rco9@gmail.com' into text field '//input[contains(@data-qa,'login-email')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:06.149" endtime="20240917 09:37:06.279"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login.Login_Password}</arg>
+<arg>QA00M852</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:06.280" level="INFO">Typing text 'QA00M852' into text field '//input[contains(@data-qa,'login-password')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:06.279" endtime="20240917 09:37:06.359"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:06.499" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:06.360" endtime="20240917 09:37:06.499"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:06.149" endtime="20240917 09:37:06.500"/>
+</branch>
+<status status="PASS" starttime="20240917 09:37:06.148" endtime="20240917 09:37:06.500"/>
+</if>
+<status status="PASS" starttime="20240917 09:37:06.147" endtime="20240917 09:37:06.500"/>
+</kw>
+<kw name="And Click on the &quot;login&quot; button" library="automationexercise_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login.Button_Login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:06.501" level="INFO">Clicking element '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:06.501" endtime="20240917 09:37:07.356"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:06.500" endtime="20240917 09:37:07.356"/>
+</kw>
+<kw name="Then Verify error &quot;Your email or password is incorrect!&quot; is visible" library="automationexercise_Login">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Your email or password is incorrect!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:07.357" endtime="20240917 09:37:07.387"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:07.512" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:07.387" endtime="20240917 09:37:07.512"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:07.357" endtime="20240917 09:37:07.512"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:07.722" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:07.513" endtime="20240917 09:37:07.722"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:37:07.722" endtime="20240917 09:37:09.909"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:07.513" endtime="20240917 09:37:09.909"/>
+</kw>
+<status status="PASS" starttime="20240917 09:36:57.360" endtime="20240917 09:37:09.909"/>
+</test>
+<status status="PASS" starttime="20240917 09:36:26.304" endtime="20240917 09:37:09.909"/>
+</suite>
+<suite id="s1-s4" name="TestCases Products" source="c:\Users\Marco\.vscode\AutomationExercise_RobotFramework\Test_Suites\TestCases_Products.robot">
+<test id="s1-s4-t1" name="TC01 - Search for a specific product" line="9">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:37:09.923" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:37:09.921" endtime="20240917 09:37:15.127"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:37:15.127" endtime="20240917 09:37:15.163"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:09.921" endtime="20240917 09:37:15.164"/>
+</kw>
+<kw name="Given That is on the &quot;Products&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:15.166" endtime="20240917 09:37:15.166"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:15.166" endtime="20240917 09:37:15.166"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:15.167" endtime="20240917 09:37:15.167"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:15.167" endtime="20240917 09:37:15.167"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:15.165" endtime="20240917 09:37:15.167"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:15.169" level="INFO">Clicking element '//a[contains(.,'Products')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:15.168" endtime="20240917 09:37:17.098"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:37:17.098" endtime="20240917 09:37:17.125"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:17.283" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:17.125" endtime="20240917 09:37:17.283"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:15.167" endtime="20240917 09:37:17.283"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.283"/>
+</branch>
+<status status="PASS" starttime="20240917 09:37:15.165" endtime="20240917 09:37:17.283"/>
+</if>
+<status status="PASS" starttime="20240917 09:37:15.165" endtime="20240917 09:37:17.283"/>
+</kw>
+<kw name="When Search for the product &quot;Stylish Dress&quot;" library="automationexercise_Products">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Products.Search_Product}</arg>
+<arg>Stylish Dress</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:17.291" level="INFO">Typing text 'Stylish Dress' into text field '//input[contains(@name,'search')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:17.283" endtime="20240917 09:37:17.427"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Button_Search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:17.427" level="INFO">Clicking element '//button[@type='button'][contains(@id,'search')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:17.427" endtime="20240917 09:37:18.384"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:18.545" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:18.384" endtime="20240917 09:37:18.545"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:17.283" endtime="20240917 09:37:18.545"/>
+</kw>
+<kw name="Then returns the searched product" library="automationexercise_Products">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240917 09:37:18.545" level="INFO">Executing JavaScript:
+window.scrollTo(0,400)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240917 09:37:18.545" endtime="20240917 09:37:18.573"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Searched Products</arg>
+<arg>10</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:18.573" endtime="20240917 09:37:18.587"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:18.800" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:18.588" endtime="20240917 09:37:18.801"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:18.545" endtime="20240917 09:37:18.801"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:18.992" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:18.803" endtime="20240917 09:37:18.992"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:37:18.993" endtime="20240917 09:37:21.220"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:18.802" endtime="20240917 09:37:21.220"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:09.914" endtime="20240917 09:37:21.221"/>
+</test>
+<test id="s1-s4-t2" name="TC02 - View details of a product" line="14">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:37:21.226" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:37:21.224" endtime="20240917 09:37:25.236"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:37:25.236" endtime="20240917 09:37:25.274"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:21.224" endtime="20240917 09:37:25.275"/>
+</kw>
+<kw name="Given That is on the &quot;Products&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:25.279" endtime="20240917 09:37:25.279"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:25.279" endtime="20240917 09:37:25.279"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:25.279" endtime="20240917 09:37:25.280"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:25.280" endtime="20240917 09:37:25.280"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:25.278" endtime="20240917 09:37:25.280"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:25.283" level="INFO">Clicking element '//a[contains(.,'Products')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:25.281" endtime="20240917 09:37:28.989"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:37:28.990" endtime="20240917 09:37:29.013"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:29.148" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:29.013" endtime="20240917 09:37:29.148"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:25.280" endtime="20240917 09:37:29.149"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:29.149" endtime="20240917 09:37:29.149"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:29.149" endtime="20240917 09:37:29.149"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:29.150" endtime="20240917 09:37:29.150"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:29.149" endtime="20240917 09:37:29.150"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:29.150" endtime="20240917 09:37:29.150"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:29.150" endtime="20240917 09:37:29.151"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:29.151" endtime="20240917 09:37:29.151"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:29.150" endtime="20240917 09:37:29.151"/>
+</branch>
+<status status="PASS" starttime="20240917 09:37:25.277" endtime="20240917 09:37:29.151"/>
+</if>
+<status status="PASS" starttime="20240917 09:37:25.275" endtime="20240917 09:37:29.151"/>
+</kw>
+<kw name="When Search for the product &quot;Stylish Dress&quot;" library="automationexercise_Products">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Products.Search_Product}</arg>
+<arg>Stylish Dress</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:29.154" level="INFO">Typing text 'Stylish Dress' into text field '//input[contains(@name,'search')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:29.152" endtime="20240917 09:37:29.279"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Button_Search}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:29.280" level="INFO">Clicking element '//button[@type='button'][contains(@id,'search')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:29.279" endtime="20240917 09:37:30.911"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:31.091" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:30.911" endtime="20240917 09:37:31.091"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:29.152" endtime="20240917 09:37:31.091"/>
+</kw>
+<kw name="And Click &quot;View Product&quot; button" library="automationexercise_Products">
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${Products.Detail_Searched_Product}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240917 09:37:31.095" endtime="20240917 09:37:31.118"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Detail_Searched_Product}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:31.120" level="INFO">Clicking element '//a[contains(.,'View Product')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:31.119" endtime="20240917 09:37:32.701"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:31.093" endtime="20240917 09:37:32.701"/>
+</kw>
+<kw name="Then returns the data of &quot;Price&quot;, &quot;Availability&quot;, &quot;Condition&quot;, &quot;Brand&quot;" library="automationexercise_Products">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Rs. 1500</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:32.702" endtime="20240917 09:37:32.714"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Availability</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:32.715" endtime="20240917 09:37:32.724"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Condition</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:32.726" endtime="20240917 09:37:32.736"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Brand</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:32.737" endtime="20240917 09:37:32.747"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:32.919" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:32.747" endtime="20240917 09:37:32.919"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:32.701" endtime="20240917 09:37:32.924"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:33.079" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-39.png"&gt;&lt;img src="selenium-screenshot-39.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:32.926" endtime="20240917 09:37:33.079"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:37:33.080" endtime="20240917 09:37:36.268"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:32.925" endtime="20240917 09:37:36.269"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:21.221" endtime="20240917 09:37:36.269"/>
+</test>
+<test id="s1-s4-t3" name="TC03 - Add Products in Cart" line="20">
+<kw name="Access the website automation" library="setup_teardown" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${geral.URL}</arg>
+<arg>${geral.Browser}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240917 09:37:36.275" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<status status="PASS" starttime="20240917 09:37:36.269" endtime="20240917 09:37:41.168"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240917 09:37:41.168" endtime="20240917 09:37:41.200"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:36.269" endtime="20240917 09:37:41.200"/>
+</kw>
+<kw name="Given That is on the &quot;Products&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:41.203" endtime="20240917 09:37:41.204"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:41.204" endtime="20240917 09:37:41.205"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:41.205" endtime="20240917 09:37:41.205"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:41.206" endtime="20240917 09:37:41.206"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:41.202" endtime="20240917 09:37:41.206"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:41.208" level="INFO">Clicking element '//a[contains(.,'Products')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:41.207" endtime="20240917 09:37:44.279"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:37:44.280" endtime="20240917 09:37:44.304"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:44.422" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:44.306" endtime="20240917 09:37:44.423"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:41.206" endtime="20240917 09:37:44.424"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:44.424" endtime="20240917 09:37:44.425"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:44.425" endtime="20240917 09:37:44.425"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:44.425" endtime="20240917 09:37:44.425"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:44.424" endtime="20240917 09:37:44.425"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:44.426" endtime="20240917 09:37:44.426"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:44.426" endtime="20240917 09:37:44.426"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:44.426" endtime="20240917 09:37:44.426"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:44.425" endtime="20240917 09:37:44.426"/>
+</branch>
+<status status="PASS" starttime="20240917 09:37:41.202" endtime="20240917 09:37:44.427"/>
+</if>
+<status status="PASS" starttime="20240917 09:37:41.201" endtime="20240917 09:37:44.427"/>
+</kw>
+<kw name="When Add two products to cart" library="automationexercise_Products">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240917 09:37:44.429" level="INFO">Executing JavaScript:
+window.scrollTo(0,400)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240917 09:37:44.428" endtime="20240917 09:37:44.435"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:37:47.444" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:37:44.436" endtime="20240917 09:37:47.444"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:47.586" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:47.445" endtime="20240917 09:37:47.586"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Product_One}</var>
+<arg>${Products.Product_OneName}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:47.616" level="INFO">${Product_One} = Blue Top</msg>
+<status status="PASS" starttime="20240917 09:37:47.593" endtime="20240917 09:37:47.616"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Product_One}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240917 09:37:47.617" level="INFO">${Product_One} = Blue Top</msg>
+<status status="PASS" starttime="20240917 09:37:47.616" endtime="20240917 09:37:47.618"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Product_Two}</var>
+<arg>${Products.Product_TwoName}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:47.636" level="INFO">${Product_Two} = Men  Tshirt</msg>
+<status status="PASS" starttime="20240917 09:37:47.619" endtime="20240917 09:37:47.636"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Product_Two}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240917 09:37:47.636" level="INFO">${Product_Two} = Men  Tshirt</msg>
+<status status="PASS" starttime="20240917 09:37:47.636" endtime="20240917 09:37:47.636"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Product_One}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:47.636" level="INFO">Clicking element '//a[@data-product-id='1'][contains(.,'Add to cart')][1]'.</msg>
+<status status="PASS" starttime="20240917 09:37:47.636" endtime="20240917 09:37:47.669"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:37:50.669" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:37:47.669" endtime="20240917 09:37:50.669"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Continue Shopping</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:50.669" endtime="20240917 09:37:50.683"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Products.Button_ContinueShopping}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:50.684" level="INFO">Clicking button '//button[@class='btn btn-success close-modal btn-block'][contains(.,'Continue Shopping')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:50.683" endtime="20240917 09:37:50.729"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Products.Product_Two}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:50.730" level="INFO">Clicking element '//a[@data-product-id='2'][contains(.,'Add to cart')][1]'.</msg>
+<status status="PASS" starttime="20240917 09:37:50.729" endtime="20240917 09:37:50.765"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240917 09:37:53.769" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240917 09:37:50.765" endtime="20240917 09:37:53.769"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Continue Shopping</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240917 09:37:53.769" endtime="20240917 09:37:53.780"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${Products.Button_ContinueShopping}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:53.781" level="INFO">Clicking button '//button[@class='btn btn-success close-modal btn-block'][contains(.,'Continue Shopping')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:53.780" endtime="20240917 09:37:53.821"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:44.428" endtime="20240917 09:37:53.821"/>
+</kw>
+<kw name="And Click &quot;View Cart&quot; button" library="automationexercise_Products">
+<kw name="That is on the &quot;Cart&quot; screen" library="shared" sourcename="That is on the &quot;${Manu}&quot; screen">
+<if>
+<branch type="IF" condition="&quot;${Manu}&quot; ==&quot;Home&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Home_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Features Items</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Products&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Products_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Products.Product_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:53.821" endtime="20240917 09:37:53.821"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Cart&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_Menus.Cart_Menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240917 09:37:53.826" level="INFO">Clicking element '//a[contains(.,'Cart')]'.</msg>
+<status status="PASS" starttime="20240917 09:37:53.821" endtime="20240917 09:37:54.851"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Cart.Cart_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240917 09:37:54.851" endtime="20240917 09:37:54.900"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:55.019" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:54.900" endtime="20240917 09:37:55.024"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:53.821" endtime="20240917 09:37:55.024"/>
+</branch>
+<branch type="ELSE IF" condition="&quot;${Manu}&quot; ==&quot;Signup&quot;">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${Home_Menus.Signup_Login_Menu}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:55.024" endtime="20240917 09:37:55.024"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login.Login_Title}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:55.024" endtime="20240917 09:37:55.024"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20240917 09:37:55.024" endtime="20240917 09:37:55.024"/>
+</kw>
+<status status="NOT RUN" starttime="20240917 09:37:55.024" endtime="20240917 09:37:55.024"/>
+</branch>
+<status status="PASS" starttime="20240917 09:37:53.821" endtime="20240917 09:37:55.024"/>
+</if>
+<status status="PASS" starttime="20240917 09:37:53.821" endtime="20240917 09:37:55.024"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:53.821" endtime="20240917 09:37:55.024"/>
+</kw>
+<kw name="Then Verify both products are added to Cart" library="automationexercise_Products">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Blue Top</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240917 09:37:55.036" level="INFO">Current page contains text 'Blue Top'.</msg>
+<status status="PASS" starttime="20240917 09:37:55.026" endtime="20240917 09:37:55.036"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Men Tshirt</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240917 09:37:55.049" level="INFO">Current page contains text 'Men Tshirt'.</msg>
+<status status="PASS" starttime="20240917 09:37:55.036" endtime="20240917 09:37:55.049"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:55.165" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-43.png"&gt;&lt;img src="selenium-screenshot-43.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:55.050" endtime="20240917 09:37:55.165"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:55.026" endtime="20240917 09:37:55.167"/>
+</kw>
+<kw name="Close section" library="setup_teardown" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240917 09:37:55.344" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-44.png"&gt;&lt;img src="selenium-screenshot-44.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240917 09:37:55.168" endtime="20240917 09:37:55.345"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240917 09:37:55.346" endtime="20240917 09:37:57.570"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:55.167" endtime="20240917 09:37:57.570"/>
+</kw>
+<status status="PASS" starttime="20240917 09:37:36.269" endtime="20240917 09:37:57.570"/>
+</test>
+<status status="PASS" starttime="20240917 09:37:09.914" endtime="20240917 09:37:57.570"/>
+</suite>
+<status status="PASS" starttime="20240917 09:35:26.360" endtime="20240917 09:37:57.578"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="9" fail="0" skip="0" id="s1" name="Test Suites">Test Suites</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="TestCases Cart">Test Suites.TestCases Cart</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="TestCases Home">Test Suites.TestCases Home</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s3" name="TestCases Login">Test Suites.TestCases Login</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s4" name="TestCases Products">Test Suites.TestCases Products</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
