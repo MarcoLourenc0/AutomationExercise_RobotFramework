@@ -17,7 +17,6 @@ Resource    ../main.robot
     
 
 *** Keywords ***
-
 Search for the product "Stylish Dress"
     Input Text       ${Products.Search_Product}    Stylish Dress
     Click Element    ${Products.Button_Search}
